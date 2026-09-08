@@ -1008,9 +1008,7 @@ var GROUPS = [
 
 { key: 'access', title: 'Access',    test: '.hint-bar',      def: 'free',   hidden: true, opts: [['free','Free'],['pro','Pro'],['guest','Signed out']] },
 
-{ key: 'gate',   title: 'Sign-in gate', test: 'html[data-access="guest"] .gate-card',  def: 'pro', opts: [['pro','Pro first'],['two','Two buttons']] },
-    { key: 'gateicon', title: 'Gate icon', test: 'html[data-access="guest"] .gate-card', def: 'lock', opts: [['lock','Lock'],['generator','Generator']] }
-  ];
+];
 
 function initToggles() {
     var root = document.documentElement;

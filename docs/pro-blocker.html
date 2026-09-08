@@ -439,7 +439,7 @@ html[data-grid="tint"] .problem { background: var(--p-blue-0); }
 </style>
 <style>
   :root {
-    --link:var(--s-text-link); --link-hover:var(--s-text-link-hover);
+    --link:var(--p-blue-500); --link-hover:var(--p-blue-600); --link-press:var(--p-blue-700);   
     --font:var(--font-sans);   
     --action:var(--s-surface-action); --action-hover:var(--s-surface-action-hover); --action-press:var(--s-surface-action-press);
     --border:var(--s-border-primary); --border-2:var(--s-border-secondary);
@@ -818,42 +818,12 @@ html:not([data-access="pro"]) .hint-bar{
     background:color-mix(in srgb, var(--s-surface-action) 12%, transparent); color:var(--s-surface-action);
     display:flex; align-items:center; justify-content:center; flex:0 0 auto;}
   .gate-ico svg{width:30px; height:30px; display:block;}
-  .gate-ico .mi{font-size:30px;}
-
-.gate-ico-lock{display:none;}
-  html[data-gateicon="lock"] .gate-ico-lock, html:not([data-gateicon]) .gate-ico-lock{display:block;}
-  html[data-gateicon="lock"] .gate-ico-gen, html:not([data-gateicon]) .gate-ico-gen{display:none;}
   .gate-title{font-size:21px; font-weight:700; color:var(--s-text-primary); line-height:1.4; margin:0; text-wrap:balance;}
 
 .gate-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:var(--sp-3); align-items:flex-start;}
   .gate-list li{display:flex; align-items:center; gap:10px; font-size:16px; color:var(--s-text-secondary);}
   .gate-list .mi{font-size:21px; color:var(--s-surface-action); flex:0 0 auto;}   
-  .gate-actions{display:flex; flex-direction:column; align-items:center; gap:var(--sp-3); margin-top:var(--sp-1); width:100%;}
-
-.gate-btn{display:inline-flex; align-items:center; justify-content:center; gap:var(--sp-2); box-sizing:border-box;
-
-position:relative; height:44px; padding:0 22px; font-weight:600; font-size:16px; border-radius:8px; white-space:nowrap;
-    background:var(--s-surface-action); color:var(--s-text-on-action);
-    transition:background-color var(--dur-norm) var(--ease), border-color var(--dur-norm) var(--ease), color var(--dur-norm) var(--ease);}
-  .gate-btn .mi{font-size:19px;}
-  .gate-btn:hover{background:var(--s-surface-action-hover); color:var(--s-text-on-action);}
-  .gate-btn:active{background:var(--s-surface-action-press);}
-  .gate-link{font-size:14px; color:var(--s-text-secondary);}
-  .gate-link b{color:var(--action); font-weight:700;}
-
-.gate-link b{transition:color var(--dur-fast);}
-  .gate-link:hover b{color:var(--action-hover);}
-  .gate-link:active b{color:var(--action-press);}
-
-.gate-btn--signin, .gate-btn--pro, .gate-link--signin, .gate-link--pro{display:none;}
-  html[data-gate="pro"] .gate-btn--pro, html:not([data-gate]) .gate-btn--pro{display:inline-flex;}
-  html[data-gate="pro"] .gate-link--signin, html:not([data-gate]) .gate-link--signin{display:inline;}
-  html[data-gate="two"] .gate-btn--signin{display:inline-flex;}
-  html[data-gate="two"] .gate-actions{flex-direction:row; flex-wrap:wrap; justify-content:center;}
-  html[data-gate="two"] .gate-btn--pro{display:inline-flex; background:transparent; color:var(--action);
-    border:1px solid var(--action);}   
-  html[data-gate="two"] .gate-btn--pro:hover{background:color-mix(in srgb, var(--action) 8%, transparent); color:var(--action-hover); border-color:var(--action-hover);}
-  html[data-gate="two"] .gate-btn--pro:active{background:color-mix(in srgb, var(--action) 14%, transparent);}
+  .gate-actions{display:flex; flex-wrap:wrap; justify-content:center; gap:var(--sp-3); margin-top:var(--sp-1); width:100%;}   
   @media (max-width:540px){ .gate-card{padding:var(--sp-6);} html[data-access="guest"] .gate{padding:var(--sp-4);} }
 
 .solve-grid{display:grid; grid-template-columns:1fr; gap:var(--sp-6); align-items:start;}
@@ -945,7 +915,7 @@ html[data-sbsstyle="plain"] .sbs-hint .sbs-cardbody{background:color-mix(in srgb
 
 .show-solution::after, .sbs-hidehints::after, .sbs-next::after,
   .sbs-all::after, .sbs-hide::after, .sbs-close::after,
-  .btn-pro::after, .gate-btn::after{
+  .btn-pro::after{
     content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
     width:max(100%,48px); height:max(100%,48px);
   }
@@ -1340,8 +1310,7 @@ html[data-sbsstyle="branded"] .sbs-hint .sbs-cardbody{padding:var(--sp-3) var(--
 <div class="gate" aria-label="Sign in to Wolfram|Alpha Practice">
       <div class="gate-card">
         <div class="gate-ico" aria-hidden="true">
-          <span class="gate-ico-lock mi mi--fill">lock</span>
-          <svg class="gate-ico-gen" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M2.63059 2.08303H16.2106C17.1536 2.08303 17.9086 2.84703 17.9086 3.78103V8.02503H16.2096V5.47803H2.63059V15.664H9.42059V17.361H2.63059C2.18052 17.361 1.74888 17.1822 1.43063 16.864C1.11238 16.5457 0.933594 16.1141 0.933594 15.664V3.78003C0.933594 2.84603 1.68859 2.08303 2.63059 2.08303Z" fill="currentColor"/>
             <path d="M8.9901 10.9951V12.6931H4.3301V10.9951H8.9901ZM4.3291 9.2981H11.9671V7.6001H4.3301L4.3291 9.2981ZM14.6401 15.6921L17.5481 12.7691L16.8721 12.0981L14.6401 14.3251L13.5141 13.2041L12.8381 13.8951L14.6401 15.6921ZM15.1921 17.8701C14.0651 17.8701 13.1041 17.4731 12.3101 16.6781C11.5161 15.8841 11.1191 14.9231 11.1191 13.7961C11.1191 12.6681 11.5161 11.7081 12.3111 10.9131C13.1051 10.1191 14.0661 9.7231 15.1941 9.7231C16.3211 9.7231 17.2821 10.1191 18.0761 10.9141C18.8701 11.7091 19.2671 12.6701 19.2671 13.7971C19.2671 14.9241 18.8701 15.8851 18.0751 16.6791C17.2811 17.4731 16.3201 17.8701 15.1921 17.8701Z" fill="currentColor"/>
           </svg>
@@ -1353,10 +1322,8 @@ html[data-sbsstyle="branded"] .sbs-hint .sbs-cardbody{padding:var(--sp-3) var(--
           <li><span class="mi" aria-hidden="true">check</span>Built-in hints and Step-by-step solutions</li>
         </ul>
         <div class="gate-actions">
-          <a class="gate-btn gate-btn--signin" href="#">Sign in</a>
-          <a class="gate-btn gate-btn--pro" href="#">Go Pro Now</a>
-          <a class="gate-link gate-link--signin" href="#">Already have an account? <b>Sign in&nbsp;&raquo;</b></a>
-          <a class="gate-link gate-link--pro" href="#">Want step-by-step solutions? <b>Learn more about Wolfram|Alpha Pro&nbsp;&raquo;</b></a>
+          <a class="btn btn--primary btn--lg" href="#">Go Pro Now</a>
+          <a class="btn btn--secondary btn--lg" href="#">Sign in</a>
         </div>
       </div>
     </div>
@@ -1705,9 +1672,7 @@ var GROUPS = [
 
 { key: 'access', title: 'Access',    test: '.hint-bar',      def: 'free',   hidden: true, opts: [['free','Free'],['pro','Pro'],['guest','Signed out']] },
 
-{ key: 'gate',   title: 'Sign-in gate', test: 'html[data-access="guest"] .gate-card',  def: 'pro', opts: [['pro','Pro first'],['two','Two buttons']] },
-    { key: 'gateicon', title: 'Gate icon', test: 'html[data-access="guest"] .gate-card', def: 'lock', opts: [['lock','Lock'],['generator','Generator']] }
-  ];
+];
 
 function initToggles() {
     var root = document.documentElement;
